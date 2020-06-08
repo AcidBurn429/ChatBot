@@ -1,0 +1,18 @@
+﻿{% extends "basic_templates/template.html" %}
+{% block content %}
+<div class="question">
+    <center><h1>{% block question %}{% endblock %}</h1></center>
+    <form action="{{ own_url }}" method="post">
+        <input type="hidden" name="token" value="{{token}}" />
+        {% for i in answers %}
+        <input type="checkbox" name="check" id="check{{i[0]}}" value="answer_{{i[0]}}" class="checkboxes" />
+        <label for="check{{i[0]}}">{{i[1]}}</label>
+        {% endfor %}
+        <center>
+            <p>
+                <input type="submit" value="Weiter" class="further_button" />
+            </p>
+        </center>
+    </form>
+</div>
+{% endblock %}

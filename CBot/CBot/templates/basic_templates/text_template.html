@@ -1,0 +1,20 @@
+﻿{% extends "basic_templates/template.html" %}
+{% block content %}
+<div class="question">
+    <center>
+        <h1 class="headline">{% block question %}{% endblock %}</h1>
+        <form action="{{ own_url }}" method="post">
+            <input type="hidden" name="token" value="{{token}}" />
+            <input type="text" name="inp" autofocus/>
+            {% if out_text|length > 0 %}
+                <p>
+                    {{out_text}}
+                </p>
+            {% endif %}
+            <p>
+                <input type="submit" value="Weiter" class="further_button" />
+            </p>
+        </form>
+    </center>
+</div>
+{% endblock %}

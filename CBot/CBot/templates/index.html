@@ -1,0 +1,10 @@
+﻿{% extends "basic_templates/template.html" %}
+{% block content %}
+
+<h1>Hallo</h1>
+<p id="intro">
+    Willkommens, Erklärungstext
+</p>
+<input type="hidden" id="token" value="{{ token }}" />
+<button onclick="start(token.value)" class="further_button">Weiter</button>
+{% endblock %}
