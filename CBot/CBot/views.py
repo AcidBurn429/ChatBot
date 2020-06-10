@@ -78,8 +78,29 @@ def root(site):
 
     # Auf der dritten Seite, wird nach dem Alter gefragt.
     elif site == 2:
-        return render_template('1.html', stylesheet=url_for('static', filename='style.css'),
-                               scriptsheet=url_for('static', filename='scripts.js'), own_url='/1', token=tok.create_token())
+        if request.method == 'POST':
+            if tok.check_token(escape(request.form["token"])):
+                age = escape(request.form["inp"])
+
+                counter = 0
+                for i in age:
+                    if ord(i) >= 48 and ord(i) <= 57:
+                        counter += 1
+                if counter == len(age):
+                    session["age"] = int(age)
+
+                    return redirect('/3')
+                else:
+                    return redirect('/0')
+            else:
+                return redirect('/0')
+
+        return render_template('2.html', stylesheet=url_for('static', filename='style.css'),
+                               scriptsheet=url_for('static', filename='scripts.js'), own_url='/1', token=tok.create_token(), session=session)
+    elif site == 3:
+        return render_template('3.html', stylesheet=url_for('static', filename='style.css'),
+                               scriptsheet=url_for('static', filename='scripts.js'), own_url='/1', token=tok.create_token(), session=session,
+                               icon=url_for('static', filename='icon.gif'))
 
 app.secret_key = urandom(90000)     # Die Daten, welche in der Session gespeichert werden, werden mit einem 90.000 Passwort geschützt.
 app.run('127.0.0.1', 7007, True)    # Hier wird der Server gestartet.

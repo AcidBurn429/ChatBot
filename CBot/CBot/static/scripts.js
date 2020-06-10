@@ -10,6 +10,12 @@ function startConnection() {
     return xmlhttp;
 }
 
+function playSound(id) {
+    var element = document.getElementById(id);
+    element.play();
+    setTimeout(element.pause(), 4000);
+}
+
 function start(tok) {
     var conn = startConnection();
 

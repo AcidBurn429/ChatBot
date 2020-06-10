@@ -44,6 +44,8 @@
   <ItemGroup>
     <Content Include="CBot\config\__pycache__\dbconnect.cpython-36.pyc" />
     <Content Include="CBot\config\__pycache__\tok.cpython-36.pyc" />
+    <Content Include="CBot\static\blub.mp3" />
+    <Content Include="CBot\static\icon.gif" />
     <Content Include="CBot\static\scripts.js" />
     <Content Include="CBot\static\style.css">
       <SubType>Code</SubType>
@@ -58,6 +60,7 @@
     <Content Include="CBot\templates\basic_templates\template.html" />
     <Content Include="CBot\templates\basic_templates\checkbox_template.html" />
     <Content Include="CBot\templates\basic_templates\text_template.html" />
+    <Content Include="CBot\templates\4.html" />
   </ItemGroup>
   <ItemGroup>
     <InterpreterReference Include="Global|PythonCore|3.6" />

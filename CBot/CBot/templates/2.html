@@ -1,2 +1,36 @@
-﻿{% extends "basic_templates/text_template.html" %}
-{% block question %} Wie heißt du? {% endblock %}
+﻿<!DOCTPYE html>
+<html lang="de-de">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="{{stylesheet}}" />
+    <script src="{{scriptsheet}}"></script>
+    <title>Dein Chat-Bot</title>
+</head>
+<body>
+    <div id="content">
+        <div id="chat_field">
+            <div class="bot_message">
+                <div class="bot_text">
+                    Hallo, kannst du mir deine Namen nennen?
+                </div>
+            </div>
+            <div class="client_message">
+                <div class="client_text">
+                    Mein Name ist {{ session["name"] }}
+                </div>
+            </div>
+            <div class="bot_message">
+                <div class="bot_text">
+                    Hallo {{ session["name"] }}, kannst du mir dein Alter sagen?
+                </div>
+            </div>
+        </div>
+        <form action="/2" method="post">
+            <div class="inp">
+                <input type="hidden" name="token" value="{{ token }}" />
+                <input type="text" name="inp" /><input type="submit" value="Senden" />
+            </div>
+        </form>
+    </div>
+</body>
+</html>

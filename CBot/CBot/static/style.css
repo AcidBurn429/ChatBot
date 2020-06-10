@@ -4,93 +4,114 @@ body {
 
 #content {
     margin-top: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
     background-color: white;
-    border: 0.5px solid silver;
-    border-radius: 30px;
-    margin-left: 10%;
-    margin-right: 10%;
 }
 
-#text {
-    padding-bottom: 2%;
-    padding-top: 2%;
-    padding-left: 2%;
-    font-family: "Arial", Times, serif;
-    font-size: 13pt;
-    line-height: 1.5;
+#chat_field {
+    padding-bottom: 3%;
+
+    background-color: white;
+    border: 1px solid black;
+    border-bottom: none;
+    height: 50%;
+    overflow-y: scroll;
 }
 
-.headline {
+::-webkit-scrollbar {
+    display: none;
+}
+
+.bot_message {
+    margin-left: 3%;
+    margin-right: 60%;
+    margin-top: 4%;
+    border: 1px solid black;
+    border-bottom-right-radius: 20px;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+}
+
+.bot_text {
+    padding-left: 4%;
+    padding-right: 3%;
+    padding-top: 3%;
     padding-bottom: 3%;
 }
 
-.further_button {
-    margin-top: 3%;
+.client_message {
+    margin-right: 3%;
+    margin-left: 60%;
+    margin-top: 4%;
+    border: 1px solid black;
+    border-bottom-left-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+}
 
+.client_text {
+    padding-left: 4%;
+    padding-right: 3%;
+    padding-top: 3%;
+    padding-bottom: 3%;
+}
+
+.inp {
+    background-color: white;
+    border: 1px solid black;
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    border-top: none;
+    height: 7%;
+}
+
+.inp input[type=text] {
+    margin-bottom: 1%;
+    background-color: white;
+    border: 1px solid black;
+    height: 100%;
+    border-bottom-left-radius: 27px;
+    border-top-left-radius: 27px;
+    padding-left: 5%;
+    width: 75%;
+}
+
+.inp input[type=submit] {
+    text-align: center;
+    height: 102%;
+    width: 25%;
+    border-bottom-right-radius: 27px;
+    border-top-right-radius: 27px;
+    background-color: #2E4F02;
+    border: 0.5px solid black;
+
+    font-size: 13pt;
+    color: white;
+}
+
+.heading {
+    background-color: #2E4F02;
+    border: 1px solid black;
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
     height: 10%;
-    width: 15%;
-    background-color: #E8FECA;
-    border: 0.5 solid silver;
-    border-radius: 30px;
+}
+
+.heading #icon {
+    margin-left: 3%;
+    margin-top: 0.5%;
+    border: 1px solid #2E4F02;
+    border-radius: 70px;
+    background-image: url('icon.gif');
+    height: 7%;
+    width: 2.6%;
+    position: fixed;
+}
+
+.heading #name {
+    padding-left: 10%;
+    padding-top: 1.5%;
     font-size: 20pt;
-}
-
-.question input[type=text] {
-    border: none;
-    border-bottom: 2px solid green;
-    padding-top: 0.5%;
-    padding-left: 0.5%;
-    padding-right: 0.5%;
-    padding-bottom: 0.5%;
-    width: 20%;
-}
-
-
-.question input[type=checkbox] {
-    display: none;
-}
-
-.question input[type=checkbox] + label::before {
-    width: 15px;
-    height: 15px;
-    background-color: white;
-    display: block;
-    float: left;
-    content: "";
-    border: 1px solid green;
-    border-radius: 20px;
-    margin-right: 15px;
-    margin-left: 45%;
-}
-
-
-.question input[type=checkbox]:checked + label::before {
-    background-color: green;
-    box-shadow: inset 0px 0px 0px 3px white;
-}
-
-.question label {
-    display: inline;
-}
-
-.question input[type=radio] {
-    display: none;
-}
-
-.question input[type=radio] + label::before {
-    width: 15px;
-    height: 15px;
-    background-color: white;
-    display: block;
-    float: left;
-    content: "";
-    border: 1px solid green;
-    border-radius: 20px;
-    margin-right: 15px;
-    margin-left: 45%;
-}
-
-.question input[type=radio]:checked + label::before {
-    background-color: green;
-    box-shadow: inset 0px 0px 0px 3px white;
+    color: white;
 }
